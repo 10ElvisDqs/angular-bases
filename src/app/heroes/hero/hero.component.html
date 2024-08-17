@@ -1,0 +1,47 @@
+<div class="p-6 bg-gray-800 text-white rounded-lg shadow-lg">
+  <h1 class="text-4xl font-bold mb-4 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
+    {{ name }}
+  </h1>
+
+  <dl class="space-y-2">
+    <div class="flex items-center space-x-4">
+      <dt class="font-semibold text-gray-300">Nombre:</dt>
+      <dd class="text-gray-100">{{ name }}</dd>
+    </div>
+
+    <div class="flex items-center space-x-4">
+      <dt class="font-semibold text-gray-300">Edad:</dt>
+      <dd class="text-gray-100">{{ age }}</dd>
+    </div>
+
+    <div class="flex items-center space-x-4">
+      <dt class="font-semibold text-gray-300">Método:</dt>
+      <dd class="text-gray-100">{{ getHeroDescription() }}</dd>
+    </div>
+
+    <div class="flex items-center space-x-4">
+      <dt class="font-semibold text-gray-300">Capitalizado:</dt>
+      <dd class="text-gray-100">{{ capitalizedName }}</dd>
+    </div>
+  </dl>
+
+  <div class="mt-6 flex justify-center space-x-4">
+    <button
+      *ngIf="name !== 'hulk'"
+      (click)="changeHero()"
+      class="px-4 py-2 rounded-full bg-gradient-to-r from-cyan-400 to-cyan-600 hover:from-cyan-500 hover:to-cyan-700 transition duration-300">
+      Cambiar Nombre
+    </button>
+    <button
+      *ngIf="age !== 34"
+      (click)="changeAge()"
+      class="px-4 py-2 rounded-full bg-gradient-to-r from-cyan-400 to-cyan-600 hover:from-cyan-500 hover:to-cyan-700 transition duration-300">
+      Cambiar Edad
+    </button>
+    <button
+      (click)="resetForm()"
+      class="px-4 py-2 rounded-full bg-gradient-to-r from-cyan-400 to-cyan-600 hover:from-cyan-500 hover:to-cyan-700 transition duration-300">
+      Resetear
+    </button>
+  </div>
+</div>
